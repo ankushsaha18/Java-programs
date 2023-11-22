@@ -8,4 +8,4 @@ public class ltcd {
         System.out.println(a);
     }
     
-}
+} 
