@@ -1,15 +1,17 @@
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class test {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int nums1[] = { 1, 2, 3, 4 };
-        int nums2[] = { 99, 45, 101 };
-        int a = nums1.length;
-        int b = nums2.length;
-        int[] z = new int[a + b];
-        System.arraycopy(nums1, 0, z, 0, a);
-        System.arraycopy(nums2, 0, z, a, b);
+        Scanner sc = new Scanner(System.in);
+        int[] arr = { 1, 2, 3, 5 };
+        int n = 5;
+        int sum = n * (n + 1) / 2;
+        int temp = 0;
+        for (int j : arr) {
+            temp += j;
+        }
+        System.out.println(sum - temp);
     }
 }

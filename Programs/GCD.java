@@ -1,21 +1,22 @@
 import java.util.*;
+
 public class GCD {
-    public static int gcd(int a,int b){
-        int gcd=1;
-        for(int i=1;i<=a && i<=b;i++){
-            if(a%i==0 && b%i==0){
-                gcd=i;
-            }
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
         }
-        return gcd;
+        return a;
     }
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter first number:");
-        int a=sc.nextInt();
+        int a = sc.nextInt();
         System.out.print("Enter Second number:");
-        int b=sc.nextInt();
-        System.out.println(gcd(a,b));
+        int b = sc.nextInt();
+        System.out.println(gcd(a, b));
     }
-    
+
 }
