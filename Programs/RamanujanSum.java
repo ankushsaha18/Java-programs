@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class test {
+public class RamanujanSum {
     public static void main(String[] args) {
         int n = 12;
         for (int i = 0; i <= n; i++) {
