@@ -1,22 +1,24 @@
-import java.util.*;
-
 public class test {
-    public static void main(String[] args) {
-        int[] arr = { 3, 5, 4, 1, 2 };
-        bubble(arr);
-
-    }
-
-    public static void bubble(int[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = 0; j < arr.length - i - 1; j++) {
-                if (arr[j] < arr[j + 1]) {
-                    int swap = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = swap;
+    public static void findMissingNumbers(int[] arr1, int[] arr2) {
+        for (int num1 : arr1) {
+            boolean found = false;
+            for (int num2 : arr2) {
+                if (num1 == num2) {
+                    found = true;
+                    break;
                 }
-                System.out.println(Arrays.toString(arr));
+            }
+            if (!found) {
+                System.out.print(num1 + " ");
             }
         }
+    }
+
+    public static void main(String[] args) {
+        int[] array1 = { 7, 5, 3, 9, 1, 6 };
+        int[] array2 = { 2, 9, 7, 4, 1, 8 };
+        System.out.print("Missing elements: ");
+        findMissingNumbers(array1, array2);
+        findMissingNumbers(array2, array1);
     }
 }

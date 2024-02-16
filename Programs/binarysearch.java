@@ -2,7 +2,7 @@ public class binarysearch {
     public static int binarySearchAsc(int[] arr, int x) {
         int i = 0, j = arr.length - 1;
         while (i <= j) {
-            int mid = (i + j) / 2;
+            int mid = i + (j - i) / 2;
             if (x > arr[mid]) {
                 i = mid + 1;
             } else if (x < arr[mid]) {
@@ -17,7 +17,7 @@ public class binarysearch {
     public static int binarySearchDesc(int[] arr, int x) {
         int i = 0, j = arr.length - 1;
         while (i <= j) {
-            int mid = (i + j) / 2;
+            int mid = i + (j - i) / 2;
             if (x > arr[mid]) {
                 j = mid;
             } else if (x < arr[mid]) {

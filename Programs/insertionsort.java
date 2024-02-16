@@ -9,14 +9,13 @@ public class insertionsort {
 
     public static void insertion(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
-            int key = arr[i];
-            int j = i - 1;
-            while (j >= 0 && arr[j] > key) {
-                arr[j + 1] = arr[j];
+            int j = i; // it will sort before part of that array
+            while (j > 0 && arr[j - 1] > arr[j]) { // we have to find where it is decreasing
+                int temp = arr[j - 1]; // swapping the value
+                arr[j - 1] = arr[j];
+                arr[j] = temp;
                 j--;
             }
-            arr[j + 1] = key;
-
         }
     }
 
