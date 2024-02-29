@@ -1,24 +1,27 @@
-public class test {
-    public static void findMissingNumbers(int[] arr1, int[] arr2) {
-        for (int num1 : arr1) {
-            boolean found = false;
-            for (int num2 : arr2) {
-                if (num1 == num2) {
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) {
-                System.out.print(num1 + " ");
-            }
-        }
-    }
 
+// use boolean array method for efficiency follow Q.no. FirstPosMiss41usingBarr
+import java.util.Arrays;
+
+public class test {
     public static void main(String[] args) {
-        int[] array1 = { 7, 5, 3, 9, 1, 6 };
-        int[] array2 = { 2, 9, 7, 4, 1, 8 };
-        System.out.print("Missing elements: ");
-        findMissingNumbers(array1, array2);
-        findMissingNumbers(array2, array1);
+        int rows = 5;
+        for (int i = rows - 1; i >= 1; i--) {
+            for (int j = rows - 1; j > i; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= rows - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
     }
 }
