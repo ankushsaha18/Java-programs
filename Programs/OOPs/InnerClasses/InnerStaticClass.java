@@ -1,4 +1,4 @@
-package OOPs;
+package OOPs.InnerClasses;
 
 public class InnerStaticClass {
     public static void main(String[] args) {

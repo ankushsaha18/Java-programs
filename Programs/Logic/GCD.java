@@ -1,3 +1,5 @@
+package Logic;
+
 import java.util.*;
 
 public class GCD {
