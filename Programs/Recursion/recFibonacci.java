@@ -2,7 +2,7 @@ package Recursion;
 
 public class recFibonacci {
     public static void main(String[] args) {
-        int term = 6;
+        int term = 3;
         System.out.println(fibonacci(term));
     }
 
