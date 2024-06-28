@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class PostfixToInfix {
     public static void main(String[] args) {
-        System.out.println(convert("dab+c*+"));
+        System.out.println(convert("6324+-*"));
     }
     public static String convert(String postfix){
         String ans = "";
@@ -17,7 +17,7 @@ public class PostfixToInfix {
             else {
                 String val2 = s.pop();
                 String val1 = s.pop();
-                String temp = val1 + ch + val2;
+                String temp = "(" + val1 + ch + val2 + ")";
                 s.push(temp);
             }
         }

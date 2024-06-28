@@ -3,7 +3,7 @@ import java.util.Stack;
 
 public class PostfixEvaluation {
     public static void main(String[] args) {
-        System.out.println(evaluate("953+4*6/-"));
+        System.out.println(evaluate("6324+-*"));
     }
     public static int evaluate(String s){
         Stack<Integer> num = new Stack<>();

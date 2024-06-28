@@ -3,7 +3,7 @@ import java.util.Stack;
 
 public class InfixToPostfix {
     public static void main(String[] args) {
-        System.out.println(convertToPostfix(("(9+3-(2+5)*7)")));
+        System.out.println(convertToPostfix(("(P+T*Z+(A*B+C)^L)")));
     }
     public static String convertToPostfix(String s){
         String ans = "";
@@ -23,15 +23,18 @@ public class InfixToPostfix {
             else if(ch == '('){
                 op.push(ch);
             }
+            else if(ch == '^'){
+                op.push(ch);
+            }
             else{
                 if(ch == '*' || ch == '/'){
-                    while (op.peek() == '*' || op.peek() == '/'){
+                    while (op.peek() == '*' || op.peek() == '/' || op.peek() == '^'){
                         operant.push(op.pop());
                     }
                     op.push(ch);
                 }
                 else if(ch == '+' || ch == '-'){
-                    while (op.peek() == '*' || op.peek() == '/' || op.peek() == '+' || op.peek() == '-'){
+                    while (op.peek() == '*' || op.peek() == '/' || op.peek() == '+' || op.peek() == '-' || op.peek() == '^'){
                         operant.push(op.pop());
                     }
                     op.push(ch);

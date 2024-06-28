@@ -2,11 +2,10 @@ package Recursion;
 
 public class TowerOfHanoi {
     public static void main(String[] args) {
-        Toh(3,"A","B","C");
+        Toh(1,"A","B","C");
     }
     public static void Toh(int n,String src,String help,String dest){
-        if(n == 1){
-            System.out.println("Transferred disk " + n + " from " + src + " to " + dest);
+        if(n == 0){
             return;
         }
         Toh(n-1,src,dest,help);

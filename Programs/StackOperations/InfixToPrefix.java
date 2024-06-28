@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class InfixToPrefix {
     public static void main(String[] args) {
-        System.out.println(convertToPrefix("(a+b/c*(d+e)-f)"));
+        System.out.println(convertToPrefix("(A+B*C/D-E)"));
     }
     public static String convertToPrefix(String s){
         String ans = "";

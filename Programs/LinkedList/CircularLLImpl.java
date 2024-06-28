@@ -6,8 +6,6 @@ public class CircularLLImpl {
         list.insert(20);
         list.insert(50);
         list.insert(100);
-        list.display();
-        list.delete(10);
-        list.display();
+        System.out.println(list.count());
     }
 }

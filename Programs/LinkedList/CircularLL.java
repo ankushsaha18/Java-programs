@@ -65,4 +65,16 @@ public class CircularLL {
             temp = temp.next;
         }while (temp != Head);
     }
+    public int count(){
+        Node temp = Head;
+        if(Head == null){
+            return 0;
+        }
+        int cnt = 0;
+        do{
+            cnt++;
+            temp = temp.next;
+        }while (temp != Head);
+        return cnt;
+    }
 }
