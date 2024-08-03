@@ -8,14 +8,10 @@ public class SinglyLinkedListImpl {
         list.insertAtFirst(5);
         list.insertAtFirst(5);
         list.insertAtLast(2);
-        list.display();
-        list.bubbleSort();
-        list.display();
         list.insertAtFirst(26);
-        list.deleteLast();
-        list.display();
-        list.reverse();
         list.insertAtLast(1000);
+        list.display();
+        list.insertUsingRec(22,2);
         list.display();
     }
 }

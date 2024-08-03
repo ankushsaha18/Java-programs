@@ -62,6 +62,20 @@ public class SinglyLinkedList {
         size++;
     }
 
+    public void insertUsingRec(double value,int index){
+        head = insertRecHelp(value,index,head);
+    }
+
+    private Node insertRecHelp(double value,int index,Node n){
+        if(index == 0){
+            Node temp = new Node(value,n);
+            size++;
+            return temp;
+        }
+        n.next =  insertRecHelp(value,index-1,n.next);
+        return n;
+    }
+
     public Node get(int index){
         Node temp = head;
         for(int i = 0 ; i < index ; i++){
