@@ -18,7 +18,6 @@ public class LCM {
             ans++;
         }
         return ans;
-
     }
     
 }
