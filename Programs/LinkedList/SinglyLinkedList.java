@@ -8,22 +8,20 @@ public class SinglyLinkedList {
     public SinglyLinkedList(){
         this.size = 0;
     }
-
     public class Node{
-        public double value;
+        public int value;
         public Node next;
 
-        public Node(double value){
+        public Node(int value){
             this. value = value;
         }
-
-        public Node(double value,Node next){
+        public Node(int value, Node next){
             this.value = value;
             this.next = next;
         }
     }
 
-    public void insertAtFirst(double value){
+    public void insertAtFirst(int value){
         Node node = new Node(value);
         node.next = head;
         head = node;
@@ -33,7 +31,7 @@ public class SinglyLinkedList {
         size++;
     }
 
-    public void insertAtLast(double value){
+    public void insertAtLast(int value){
         if(tail == null){
             insertAtFirst(value);
             return;
@@ -62,11 +60,11 @@ public class SinglyLinkedList {
         size++;
     }
 
-    public void insertUsingRec(double value,int index){
+    public void insertUsingRec(int value,int index){
         head = insertRecHelp(value,index,head);
     }
 
-    private Node insertRecHelp(double value,int index,Node n){
+    private Node insertRecHelp(int value,int index,Node n){
         if(index == 0){
             Node temp = new Node(value,n);
             size++;
@@ -158,7 +156,7 @@ public class SinglyLinkedList {
             current = head;
             while(current.next != null){
                 if(current.value > current.next.value){
-                    double temp = current.value;
+                    int temp = current.value;
                     current.value = current.next.value;
                     current.next.value = temp;
                     swapped = true;
@@ -176,4 +174,5 @@ public class SinglyLinkedList {
         }
         System.out.println("END");
     }
+
 }
