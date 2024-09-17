@@ -12,7 +12,7 @@ public class ThreeSum {
         // If want to skip this part of duplicate handling use a HashSet instead of ArrayList
         // It will take O(n) space complexity
         Arrays.sort(nums);
-        for(int i = 0 ; i < nums.length ; i++){ // for loop is for fixing a value
+        for(int i = 0 ; i < nums.length-2 ; i++){ // for loop is for fixing a value
             if(i>0 && nums[i-1] == nums[i]){
                 // skip duplicates
                 continue;

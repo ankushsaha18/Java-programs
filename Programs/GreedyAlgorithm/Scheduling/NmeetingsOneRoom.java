@@ -23,9 +23,9 @@ public class NmeetingsOneRoom {
         });
         int cnt = 0;
         int prev = -1;
-        for(int i = 0; i < arr.length; i++) {
-            if (arr[i][0] > prev) {
-                prev = arr[i][1];
+        for (int[] ints : arr) {
+            if (ints[0] > prev) {
+                prev = ints[1];
                 cnt++;
             }
         }
