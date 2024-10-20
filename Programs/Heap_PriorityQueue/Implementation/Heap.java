@@ -13,7 +13,6 @@ public class Heap{
         a[i] = a[j];
         a[j] = temp;
     }
-
     private int parent(int i){
         return i/2;
     }
@@ -23,49 +22,49 @@ public class Heap{
     private int right(int i){
         return 2*i+1; // 0 indexed
     }
-
     private void resize(){
         int[] nr = new int[arr.length*2];
         System.arraycopy(arr, 0, nr, 0, arr.length);
         arr = nr;
     }
-    public void insert(int val){
+
+    public void insert(int val){ // heapify up
         size++;
-        if(size >= arr.length){
+        if (size >= arr.length) {
             resize();
         }
+        arr[size] = val;
         int i = size;
-        arr[i] = val;
-        while (i > 1){
-            int parent = i/2;
-            if(arr[parent] < arr[i]){
-                swap(arr,i,parent);
+        while (i > 1) {
+            int parent = parent(i);
+            if (arr[parent] < arr[i]) {
+                swap(arr, i, parent);
                 i = parent;
-            }else {
-                return;
+            } else {
+                break;
             }
         }
     }
 
-    public void delete(){
+    public void delete(){  // Heapify Down
         if(size == 0){
             return;
         }
         arr[1] = arr[size];
         size--;
         int i = 1;
-        while (i < size){
+        while (2*i <= size) {
             int left = left(i);
             int right = right(i);
-            if (left < size && arr[i] < arr[left]){
-                swap(arr,i,left);
-                i = left;
+            int largerChild = left;
+            if (right <= size && arr[right] > arr[left]) {
+                largerChild = right;
             }
-            else if (right < size && arr[i] < arr[right]){
-                swap(arr,i,right);
-                i = right;
-            }else{
-                return;
+            if (arr[i] < arr[largerChild]) {
+                swap(arr, i, largerChild);
+                i = largerChild;
+            } else {
+                break;
             }
         }
     }
@@ -74,10 +73,10 @@ public class Heap{
         int largest = i;
         int l = left(i);
         int r = right(i);
-        if(l < n && largest < a[l]){
+        if(l < n && a[largest] < a[l]){
             largest = l;
         }
-        if(r < n && largest < a[r]){
+        if(r < n && a[largest] < a[r]){
             largest = r;
         }
         if(largest != i){
@@ -87,7 +86,7 @@ public class Heap{
     }
 
     public void buildheap(int[] A){
-        int n = A.length-1;
+        int n = A.length;
         for(int i = n/2 ; i > 0 ; i--){
             heapify(A,n,i);
         }
