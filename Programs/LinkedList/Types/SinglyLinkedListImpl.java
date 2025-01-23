@@ -3,16 +3,14 @@ package LinkedList.Types;
 public class SinglyLinkedListImpl {
     public static void main(String[] args) {
         SinglyLinkedList list = new SinglyLinkedList();
-        list.insertAtLast(1);
-        list.insertAtLast(2);
-        list.insertAtLast(3);
-        list.insertAtLast(4);
-        list.insertAtLast(5);
-        list.insertAtLast(6);
-        list.insertAtLast(7);
-        list.insertAtLast(8);
-        list.insertAtLast(9);
+        list.insertAtFirst(10);
+        list.insertAtLast(20);
+        list.insertAtIndex(15,1);
         list.display();
+        list.deleteLast();
+        list.display();
+        list.display();
+        list.reverse();
         list.display();
     }
 }

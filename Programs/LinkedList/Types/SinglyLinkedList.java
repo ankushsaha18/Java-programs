@@ -106,10 +106,10 @@ public class SinglyLinkedList {
 
     public double deleteIndex(int index){
         if(index == 0){
-            deleteFirst();
+            return deleteFirst();
         }
         if (index == size - 1){
-            deleteLast();
+            return deleteLast();
         }
         Node prev = get(index - 1);
         double val = prev.next.value;
